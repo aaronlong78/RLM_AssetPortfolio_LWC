@@ -45,16 +45,7 @@ sf project deploy start --source-dir force-app --target-org <alias>
 
 ## Post-deploy steps
 
-1. **Grant Apex access — no permission set ships in this repo.** The LWC calls
-   `RLM_AccountAssetPortfolioService` (`@AuraEnabled`); users need access to that
-   class or the component throws. Grant it via an existing permission set or
-   create one:
-   ```bash
-   # option: create + assign a minimal permset granting the Apex class
-   # (or add RLM_AccountAssetPortfolioService to a permset you already assign)
-   sf org assign permset -n <your_permset_with_apex_access> --target-org <alias>
-   ```
-2. **Add the component to the Account record page.** Lightning App Builder →
+1. **Add the component to the Account record page.** Lightning App Builder →
    open the Account record page → drag **rlmAccountAssetPortfolio** onto the page
    → Save & Activate.
 
